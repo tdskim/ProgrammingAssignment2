@@ -1,8 +1,14 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+# Following functions will create a way to take matrix as an input and create set of functions
+# that will calculate inverse of input matrix.
+# In order to make the calculation efficient, inverse of matrix will be cached, and if it is called
+# later, the result will be pulled from cache instead of calculating it again.
 
+## Write a short comment describing this function
+ 
+# makeCacheMatrix function creates set of functions that will get/set matrix and also get/set inverse of matrix
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL
     set <- function (y)
@@ -22,6 +28,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+# 'cacheSolve function will check if inverse of matrix is stored in cached first, and if so, then it will return
+# the result from cache.  If not, it will calculate the inverse of matrix and return
 cacheSolve <- function(x, ...) {
     i <- x$getInverse()
     if(!is.null(i)) {
